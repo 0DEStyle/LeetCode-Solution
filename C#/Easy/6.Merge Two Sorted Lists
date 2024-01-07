@@ -1,0 +1,77 @@
+/*Challenge link:https://leetcode.com/problems/merge-two-sorted-lists/description/
+Question:
+You are given the heads of two sorted linked lists list1 and list2.
+
+Merge the two lists into one sorted list. The list should be made by splicing together the nodes of the first two lists.
+
+Return the head of the merged linked list.
+
+ 
+
+Example 1:
+
+(see image in link above)
+
+Input: list1 = [1,2,4], list2 = [1,3,4]
+Output: [1,1,2,3,4,4]
+Example 2:
+
+Input: list1 = [], list2 = []
+Output: []
+Example 3:
+
+Input: list1 = [], list2 = [0]
+Output: [0]
+ 
+
+Constraints:
+
+The number of nodes in both lists is in the range [0, 50].
+-100 <= Node.val <= 100
+Both list1 and list2 are sorted in non-decreasing order.
+*/
+
+//***************Solution********************
+/**
+ * Definition for singly-linked list.
+ * public class ListNode {
+ *     public int val;
+ *     public ListNode next;
+ *     public ListNode(int val=0, ListNode next=null) {
+ *         this.val = val;
+ *         this.next = next;
+ *     }
+ * }
+ */
+
+public class Solution {
+    public ListNode MergeTwoLists(ListNode list1, ListNode list2) {
+        var tempNode = new ListNode();
+        var tail = tempNode;
+
+        //pointer 1 and 2
+        var ptr1 = list1;
+        var ptr2 = list2;
+
+        //while either pointers are not null
+        //if pointer 1 value is less than pointer 2 value
+        //set tail.next to pointer 1, and pointer 1 to next
+        //else do the opposite for pointer 2
+        //then set tail.next to tail for next iteration
+        while(ptr1 != null && ptr2 != null){
+            if(ptr1.val < ptr2.val){
+                tail.next = ptr1;
+                ptr1 = ptr1.next;
+            }
+            else{
+                tail.next = ptr2;
+                ptr2 = ptr2.next;
+            }
+            tail = tail.next;
+        }
+
+        //The null-coalescing operator ?? returns the value of its left-hand operand if it isn't null
+        tail.next = ptr1 ?? ptr2;
+        return tempNode.next;
+    }
+}
