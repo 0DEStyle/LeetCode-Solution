@@ -103,3 +103,13 @@ public class Solution {
         return one;
     }
 }
+
+//efficient method
+//because the pattern is fibonacci, we can simplify further
+//https://medium.com/@adarshtyagi/fibonacci-in-constant-time-945546c9e64c
+//since x start at 1, so we do x + 1 to shift into the right position.
+//this method is O(1), can deal wtih large number extremely fast compare to memorization.
+using static System.Math;
+public class Solution {
+    public int ClimbStairs(int x)=> (int)(1/Sqrt(5)*(Pow(((1+Sqrt(5))/2),x+1)-Pow((((1-Sqrt(5))/2)),x+1)));
+}
