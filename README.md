@@ -1,10 +1,10 @@
 <h1 align="center">LeetCode Solutions</h1>
 <div align="center"> 
-<img width="90%" height="90%" src="https://github.com/0DEStyle/LeetCode-Solution/blob/main/Logo.png" hspace="20">
+<img width="90%" height="90%" src="https://github.com/0DEStyle/LeetCode-Solution/blob/main/Images/Logo.png" hspace="20">
 </div>
 
 ## Achievements
-<img width="30%" height="90%" src="https://github.com/0DEStyle/LeetCode-Solution/blob/main/SOLVING%20PROBLEMS%2050%2B%20DAYS%20IN%202024.png" hspace="20">
+<img width="30%" height="90%" src="https://github.com/0DEStyle/LeetCode-Solution/blob/main/Images/SOLVING%20PROBLEMS%2050+%20DAYS%20IN%202024.png" hspace="20">
 
 ⭐Date started: 2nd January, 2024
 
