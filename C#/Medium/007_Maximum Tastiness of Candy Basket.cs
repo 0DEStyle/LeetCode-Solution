@@ -37,6 +37,7 @@ Constraints:
 
 //***************Solution********************
 //binary search method
+//reference algo: https://www.youtube.com/watch?v=uHGWEGMCKm4
 public class Solution {
     public bool checkValid(int target,int[] price,int k) {
         int prev = price[0], count = 1; 
