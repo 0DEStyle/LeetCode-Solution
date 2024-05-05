@@ -1,0 +1,23 @@
+/*
+an easy way to do binary search using built-in function. //see medium > 069_K-diff Pairs in an Array.cs
+*/
+public class Solution {
+    public int FindPairs(int[] nums, int k) {
+        //create int hashset
+        //sort num array in ascending order
+        var uniquePair = new HashSet<int>();
+        Array.Sort(nums);
+        int n = nums.Length;
+
+        //loop through num.length -1
+        //do binary search on ()array nums, starting value, range, comparer)
+        //BinarySearch(Array, Int32, Int32, Object, IComparer)
+        //https://learn.microsoft.com/en-us/dotnet/api/system.array.binarysearch?view=net-8.0
+        //if true, add current index of nums into uniquePair.
+        for (int i = 0; i < n - 1; i++){
+            if (Array.BinarySearch(nums, i + 1, n - i - 1, nums[i] + k) >= 0)
+                uniquePair.Add(nums[i]);
+        }
+        return uniquePair.Count;
+    }
+}
