@@ -51,7 +51,7 @@ Constraints:
 */
 
 //***************Solution********************
-//Longest Increasing Subsequence 
+//Longest Increasing Subsequence, time out
 public class Solution {
         public int KIncreasing(int[] arr, int k){
             int longest = 0;
@@ -84,7 +84,7 @@ public class Solution {
             int l = 0, r = mono.Count - 1;
             while (l < r){
                 //find mid index
-                int m = r + (l - r) / 2;
+                int m = l + (r - l) / 2;
                 //check condition and shift index accordingly
                 if (mono[m] <= val)
                     l = m + 1;
