@@ -45,8 +45,57 @@ queries[i] = [ai, bi]
 */
 
 //***************Solution********************
-//test case passed but took too long.
 //better explanation: https://www.youtube.com/watch?v=zl4Y9GYjBc0
+
+//test case passed but took too long. 993ms, depend on server.
+public class Solution {
+    public int[] LeftmostBuildingQueries(int[] A, int[][] queries) {
+        int n = A.Length, qn = queries.Length;
+        List<List<int[]>> que = new List<List<int[]>>();
+        for (int i = 0; i < n; i++)
+            que.Add(new List<int[]>());
+        PriorityQueue<int[], int[]> h = new PriorityQueue<int[], int[]>(Comparer<int[]>.Create((a, b) => a[0].CompareTo(b[0])));
+        int[] res = new int[qn];
+        Array.Fill(res, -1);
+        // Step 1
+        for (int qi = 0; qi < qn; qi++)
+        {
+            int i = queries[qi][0], j = queries[qi][1];
+            if (i < j && A[i] < A[j])
+            {
+                res[qi] = j;
+            }
+            else if (i > j && A[i] > A[j])
+            {
+                res[qi] = i;
+            }
+            else if (i == j)
+            {
+                res[qi] = i;
+            }
+            else // Step 2
+            {
+                que[Math.Max(i, j)].Add(new int[] { Math.Max(A[i], A[j]), qi });
+            }
+        }
+        // Step 3
+        for (int i = 0; i < n; i++)
+        {
+            while (h.Count > 0 && h.Peek()[0] < A[i])
+            {
+                res[h.Dequeue()[1]] = i;
+            }
+            foreach (int[] q in que[i])
+            {
+                h.Enqueue(q, q);
+            }
+        }
+
+        return res;
+    }
+}
+
+//method 2
 public class Solution {
     public int[] LeftmostBuildingQueries(int[] heights, int[][] queries) {
         int qLen = queries.Length, hLen = heights.Length;
