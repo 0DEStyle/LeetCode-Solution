@@ -21,3 +21,6 @@ public class Solution {
         return uniquePair.Count;
     }
 }
+
+useful easy 169_Unique Morse Code Words.cs
+encoding morse code from word
