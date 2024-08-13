@@ -51,21 +51,16 @@ s = "abcdefghijklmnopqrstuvwxyz"
 
 public class Solution {
     public int[] NumberOfLines(int[] widths, string s) {
-        var res = new int[2];
-        var lines = 1,  width = 0;
+        int counter = 0, sum = 0;
 
-        for (char c : s.toCharArray()) {
-            int charWidth = widths[c - 'a'];
-            if (width + charWidth > 100) {
-                lines++;
-                width = charWidth;
-            } else 
-                width += charWidth;
+        for (int i = 0; i < s.Length; i++){
+            int ind = s[i] - 'a';
+            sum += widths[ind];
+            if (sum > 100){
+                counter++;
+                sum = widths[ind];
+            }
         }
-
-        res[0] = lines;
-        res[1] = width;
-
-        return res;
+        return new int[]{counter + 1, sum};
     }
 }
