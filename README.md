@@ -6,6 +6,7 @@
 ## Achievements
 ⭐2025⭐ <br />
 <img width="30%" height="90%" src="https://raw.githubusercontent.com/0DEStyle/LeetCode-Solution/refs/heads/main/Images/LeetCode50days2025.png" hspace="20">
+<img width="30%" height="90%" src="https://raw.githubusercontent.com/0DEStyle/LeetCode-Solution/refs/heads/main/Images/LeetCode100days2025.png" hspace="20">
 
 ⭐2024⭐ <br />
 <img width="30%" height="90%" src="https://github.com/0DEStyle/LeetCode-Solution/blob/main/Images/SOLVING%20PROBLEMS%2050+%20DAYS%20IN%202024.png" hspace="20">
